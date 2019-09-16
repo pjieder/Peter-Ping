@@ -7,7 +7,7 @@ import greenfoot.*;
  * @author The teachers 
  * @version 1
  */
-public class Paddle extends Actor
+public class Paddle extends SmoothMover
 {
     private int width;
     private int height;

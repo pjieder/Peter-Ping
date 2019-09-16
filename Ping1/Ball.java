@@ -7,7 +7,7 @@ import greenfoot.*;
  * @author The teachers 
  * @version 1
  */
-public class Ball extends Actor
+public class Ball extends SmoothMover
 {
     private static final int BALL_SIZE = 15;
     private static final int BOUNCE_DEVIANCE_MAX = 5;

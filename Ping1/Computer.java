@@ -30,8 +30,9 @@ public class Computer extends SmoothMover
      */
     public void act() 
     {
-        tryChangeDirection();
         setLocation(getX() + dx, getY());
+        tryChangeDirection();
+        
     }    
 
     /**
@@ -44,7 +45,9 @@ public class Computer extends SmoothMover
         if(getX() + width/2 >= getWorld().getWidth() || getX() - width/2 <= 0)
         {
             //Change our 'x' direction to the inverted direction:
-            dx = dx * -1;
+            //dx = dx * -1;
+            PingWorld.paddle = 0;
+            getWorld().removeObject(this);
         }
     }
 

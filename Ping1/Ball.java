@@ -72,7 +72,7 @@ public class Ball extends SmoothMover
      */
     private boolean isTouchingSides()
     {
-        return (getX() <= BALL_SIZE/2 || getX() >= getWorld().getWidth() - BALL_SIZE/2);
+        return (getX() <= BALL_SIZE/2 || getX() >= getWorld().getWidth() - BALL_SIZE/2) ;
     }
 
     /**
@@ -81,7 +81,7 @@ public class Ball extends SmoothMover
     private boolean isTouchingCeiling()
     {
         //System.out.println("isTouchingCeiling()");
-        return (getY() <= BALL_SIZE/2);
+        return (getY() <= BALL_SIZE);
         
     }
 

@@ -36,6 +36,7 @@ public class PingWorld extends World
             addObject(player, 300, 650);
             addObject(new Computer(100,10),100, WORLD_HEIGHT - 650);
             paddle++;
+           
         }
         else
         {

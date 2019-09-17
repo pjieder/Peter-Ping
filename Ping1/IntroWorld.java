@@ -19,14 +19,14 @@ public class IntroWorld extends World
     {
         super(WORLD_WIDTH, WORLD_HEIGHT, 1); 
         GreenfootImage background = getBackground();
-        background.setColor(Color.BLACK);
-        background.drawString("Intro world. Hit <enter> to start game...", WORLD_WIDTH / 2 - 100, WORLD_HEIGHT / 2);
+        background.setColor(Color.WHITE);
+        background.drawString("Hit <space> to start game...", WORLD_WIDTH / 2 - 50, WORLD_HEIGHT / 2);
     }
     
     public void act()
     {
         String key = Greenfoot.getKey();
-        if (key != null && key.equals("enter"))
+        if (key != null && key.equals("space"))
         {
             Greenfoot.setWorld(new PingWorld(true));
         }

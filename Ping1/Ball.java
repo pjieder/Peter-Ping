@@ -104,10 +104,12 @@ public class Ball extends SmoothMover
             {
                 revertHorizontally();
             }
+            Greenfoot.playSound("thump.wav");
         }
          else if(isTouchingCeiling())
         {
                   System.out.println("isTouchingCeiling()");
+                  Greenfoot.playSound("thump.wav");
             
                   revertVertically();
         }
@@ -164,6 +166,7 @@ public class Ball extends SmoothMover
         {
             revertVertically();
             hit = hit + 1;
+            Greenfoot.playSound("pew.wav");
 
         }
         Actor Computer = getOneIntersectingObject(Computer.class);
@@ -183,7 +186,7 @@ public class Ball extends SmoothMover
 
             //revertVertically();
             hit = hit + 1;
-            
+            Greenfoot.playSound("pew.wav");
 
         }
     }

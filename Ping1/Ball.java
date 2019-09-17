@@ -21,6 +21,7 @@ public class Ball extends SmoothMover
     private boolean hasBouncedVertically;
     private int delay;
     private GreenfootImage ball;
+    
    
     
 
@@ -125,6 +126,7 @@ public class Ball extends SmoothMover
     {
         if (isTouchingFloor())
         {
+            ((PingWorld)getWorld()).getCounter().reset();
             init();
             setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
         }
@@ -210,6 +212,8 @@ public class Ball extends SmoothMover
         {
             speed = speed + 1;
             hit = 0;
+            ((PingWorld)getWorld()).getCounter().add(1);
+            
         }
     }
   

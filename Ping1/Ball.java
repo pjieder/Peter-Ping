@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.*;
 
 
 /**
@@ -13,14 +14,14 @@ public class Ball extends SmoothMover
     private static final int BOUNCE_DEVIANCE_MAX = 5;
     private static final int STARTING_ANGLE_WIDTH = 90;
     private static final int DELAY_TIME = 100;
-    private int scoreRight = 0;
-    private int scoreLeft = 0;
-    
 
+    private int hit = 1;
     private int speed = 2;
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
+   
+    
 
     /**
      * Contructs the ball and sets it in motion!
@@ -41,7 +42,7 @@ public class Ball extends SmoothMover
         ballImage.fillOval(0, 0, BALL_SIZE, BALL_SIZE);
         setImage(ballImage);
     }
-
+   
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -57,13 +58,11 @@ public class Ball extends SmoothMover
             move(speed);
             checkBounceOffWalls();
             checkRestart();
-            scorePoint();
             bouncePaddle();
+            ballPace();
         }
     }
-
-        
-
+    
     /**
      * Returns true if the ball is touching one of the side walls.
      */
@@ -77,7 +76,9 @@ public class Ball extends SmoothMover
      */
     private boolean isTouchingCeiling()
     {
-        return (getY() <= 0 + BALL_SIZE/2);
+        //System.out.println("isTouchingCeiling()");
+        return (getY() <= BALL_SIZE/2);
+        
     }
 
     /**
@@ -101,6 +102,12 @@ public class Ball extends SmoothMover
                 revertHorizontally();
             }
         }
+         else if(isTouchingCeiling())
+        {
+                  System.out.println("isTouchingCeiling()");
+            
+                  revertVertically();
+        }
         else
         {
             hasBouncedHorizontally = false;
@@ -118,13 +125,9 @@ public class Ball extends SmoothMover
             init();
             setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
         }
-        if (isTouchingCeiling())
-        {
-            init();
-            setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
-        }
+        
+       
     }
-    
 
     /**
      * Bounces the ball back from a vertical surface.
@@ -141,9 +144,14 @@ public class Ball extends SmoothMover
      */
     private void revertVertically()
     {
+        //System.out.println("revertVertically()");
         int randomness = Greenfoot.getRandomNumber(BOUNCE_DEVIANCE_MAX)- BOUNCE_DEVIANCE_MAX / 2;
         setRotation((360 - getRotation()+ randomness + 360) % 360);
+        if(!hasBouncedVertically){
         hasBouncedVertically = true;
+        }
+        else{ hasBouncedVertically = false;}
+       
     }
 
     public void bouncePaddle()
@@ -152,15 +160,35 @@ public class Ball extends SmoothMover
         if (Paddle !=null)
         {
             revertVertically();
+<<<<<<< HEAD
+            
+=======
+            hit = hit + 1;
+>>>>>>> adf77b080ce1f658e0417767596fa7eb172c8d69
         }
         Actor Computer = getOneIntersectingObject(Computer.class);
         if (Computer !=null)
-        {revertVertically();
+        {
+<<<<<<< HEAD
+            
+            if(!hasBouncedVertically){
+                System.out.println("computer   " + Computer.getY());
+                System.out.println("ball    " + getY());
+                
+            }
+            else{
+               revertVertically();
+               System.out.println("bounce");
+            }
+=======
+            revertVertically();
+            hit = hit + 1;
+>>>>>>> adf77b080ce1f658e0417767596fa7eb172c8d69
         }
     }
     
 
-    /**
+     /**
      * Initialize the ball settings.
      */
     private void init()
@@ -171,16 +199,16 @@ public class Ball extends SmoothMover
         setRotation(Greenfoot.getRandomNumber(STARTING_ANGLE_WIDTH)+STARTING_ANGLE_WIDTH/2);
     }
     
-        /**
-     * If the ball hits either the right or left edge of the world
-     * a point is scored for the player of the opposite side. 
+    /**
+     * If hit either player 10 times, go faster
      */
-    public void scorePoint()
-   {
-            if (isTouchingFloor())
-                scoreRight = scoreRight + 1;
-                
-            if (isTouchingCeiling())
-                scoreLeft = scoreLeft + 1;
-}
+    public void ballPace()
+    {
+        if (hit == 10)
+        {
+            speed = speed + 1;
+            hit = 0;
+        }
+    }
+  
 }

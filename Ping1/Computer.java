@@ -12,6 +12,7 @@ public class Computer extends SmoothMover
     private int width;
     private int height;
     private int dx;
+    private GreenfootImage bluepaddel;
 
     /**
      * Constructs a new paddle with the given dimensions.
@@ -55,11 +56,12 @@ public class Computer extends SmoothMover
      * Creates and sets an image for the paddle, the image will have the same dimensions as the paddles width and height.
      */
     private void createImage()
-    {
-        GreenfootImage image = new GreenfootImage(width, height);
+    {   
+       bluepaddel = new  GreenfootImage("bluepaddel.png"); 
+        /*GreenfootImage image = new GreenfootImage(width, height);
         image.setColor(Color.BLACK);
         image.fill();
-        setImage(image);
+        setImage(image);*/
     }
 
 }

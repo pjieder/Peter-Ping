@@ -193,6 +193,7 @@ public class Ball extends SmoothMover
      */
     private void init()
     {
+        speed = 2;
         delay = DELAY_TIME;
         hasBouncedHorizontally = false;
         hasBouncedVertically = false;

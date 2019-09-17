@@ -9,7 +9,7 @@ import java.awt.Graphics;
  */
 public class Counter extends Actor
 {
-    private static final Color textColor = new Color(255, 180, 150);
+    private static final Color textColor = new Color(255, 255, 255);
     
     private int value = 0;
     private int target = 0;

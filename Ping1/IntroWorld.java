@@ -20,7 +20,7 @@ public class IntroWorld extends World
         super(WORLD_WIDTH, WORLD_HEIGHT, 1); 
         GreenfootImage background = getBackground();
         background.setColor(Color.WHITE);
-        background.drawString("Hit <space> to start game...", WORLD_WIDTH / 2 - 50, WORLD_HEIGHT / 2);
+        background.drawString("Hit <space> to start game...", WORLD_WIDTH / 2 - 65, WORLD_HEIGHT / 2);
     }
     
     public void act()

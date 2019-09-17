@@ -30,8 +30,8 @@ public class PingWorld extends World
         super(WORLD_WIDTH, WORLD_HEIGHT, 1); 
         if (gameStarted)
         {
-             scoreCounter = new Counter("Score: ");
-              addObject(scoreCounter, 60, 380);
+             scoreCounter = new Counter("Game Level: ");
+              addObject(scoreCounter, 85, 20);
               
             GreenfootImage background = getBackground();
             background.setColor(Color.BLACK);

@@ -20,6 +20,7 @@ public class Ball extends SmoothMover
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
+    private GreenfootImage ball;
    
     
 
@@ -37,10 +38,12 @@ public class Ball extends SmoothMover
      */
     private void createImage()
     {
-        GreenfootImage ballImage = new GreenfootImage(BALL_SIZE,BALL_SIZE);
+        ball = new GreenfootImage ("ball.png");
+        
+        /*GreenfootImage ballImage = new GreenfootImage(BALL_SIZE,BALL_SIZE);
         ballImage.setColor(Color.BLACK);
         ballImage.fillOval(0, 0, BALL_SIZE, BALL_SIZE);
-        setImage(ballImage);
+        setImage(ballImage);*/
     }
    
     /**

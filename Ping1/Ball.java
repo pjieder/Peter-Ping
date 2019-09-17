@@ -20,8 +20,6 @@ public class Ball extends SmoothMover
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
-   
-    
 
     /**
      * Contructs the ball and sets it in motion!
@@ -78,7 +76,6 @@ public class Ball extends SmoothMover
     {
         //System.out.println("isTouchingCeiling()");
         return (getY() <= BALL_SIZE/2);
-        
     }
 
     /**
@@ -125,8 +122,6 @@ public class Ball extends SmoothMover
             init();
             setLocation(getWorld().getWidth() / 2, getWorld().getHeight() / 2);
         }
-        
-       
     }
 
     /**
@@ -151,7 +146,6 @@ public class Ball extends SmoothMover
         hasBouncedVertically = true;
         }
         else{ hasBouncedVertically = false;}
-       
     }
 
     public void bouncePaddle()
@@ -159,18 +153,12 @@ public class Ball extends SmoothMover
         Actor Paddle = getOneIntersectingObject(Paddle.class);
         if (Paddle !=null)
         {
-            revertVertically();
-<<<<<<< HEAD
-            
-=======
+            revertVertically();          
             hit = hit + 1;
->>>>>>> adf77b080ce1f658e0417767596fa7eb172c8d69
         }
         Actor Computer = getOneIntersectingObject(Computer.class);
         if (Computer !=null)
-        {
-<<<<<<< HEAD
-            
+        {            
             if(!hasBouncedVertically){
                 System.out.println("computer   " + Computer.getY());
                 System.out.println("ball    " + getY());
@@ -180,15 +168,12 @@ public class Ball extends SmoothMover
                revertVertically();
                System.out.println("bounce");
             }
-=======
             revertVertically();
             hit = hit + 1;
->>>>>>> adf77b080ce1f658e0417767596fa7eb172c8d69
         }
     }
     
-
-     /**
+    /**
      * Initialize the ball settings.
      */
     private void init()

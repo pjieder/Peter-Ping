@@ -32,10 +32,11 @@ public class PingWorld extends World
             background.setColor(Color.BLACK);
             // Create a new world with WORLD_WIDTHxWORLD_HEIGHT cells with a cell size of 1x1 pixels.
             addObject(new Ball(), WORLD_WIDTH/2, WORLD_HEIGHT/2);
-            Paddle player = new Paddle(100,10);
+            Paddle player = new Paddle(144,46);
             addObject(player, 300, 650);
-            addObject(new Computer(100,10),100, WORLD_HEIGHT - 650);
+            addObject(new Computer(144,46),100, WORLD_HEIGHT - 650);
             paddle++;
+            
         }
         else
         {

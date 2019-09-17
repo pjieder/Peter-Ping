@@ -73,7 +73,7 @@ public class Ball extends SmoothMover
      */
     private boolean isTouchingCeiling()
     {
-        return (getY() <= 0 + BALL_SIZE/2);
+        return (getY() <= BALL_SIZE/2);
     }
 
     /**
@@ -180,5 +180,4 @@ public class Ball extends SmoothMover
             hit = 0;
         }
     }
-  
 }

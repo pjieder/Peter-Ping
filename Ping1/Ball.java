@@ -183,6 +183,7 @@ public class Ball extends SmoothMover
 
             //revertVertically();
             hit = hit + 1;
+            
 
         }
     }

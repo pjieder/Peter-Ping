@@ -8,7 +8,7 @@ import java.util.*;
  * @author The teachers 
  * @version 1
  */
-public class Ball extends SmoothMover
+public class Ball extends Actor
 {
     private static final int BALL_SIZE = 15;
     private static final int BOUNCE_DEVIANCE_MAX = 5;

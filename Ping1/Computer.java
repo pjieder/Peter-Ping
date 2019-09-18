@@ -7,7 +7,7 @@ import greenfoot.*;
  * @author The teachers 
  * @version 1
  */
-public class Computer extends SmoothMover
+public class Computer extends Actor
 {
     private int width;
     private int height;

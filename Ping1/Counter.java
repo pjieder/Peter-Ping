@@ -12,7 +12,7 @@ public class Counter extends Actor
     private static final Color textColor = new Color(255, 255, 255);
     
     private int value = 0;
-    private int target = 0;
+    private int target = 1;
     private String text;
     private int stringLength;
 
@@ -51,7 +51,7 @@ public class Counter extends Actor
     
     public void reset()
     {
-        target = 0;
+        target = 1;
     }
 
     public int getValue()

@@ -20,7 +20,9 @@ public class Ball extends Actor
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
-    
+    private GreenfootSound thump;
+    private GreenfootSound pew;
+    private GreenfootSound booo;
     
    
     
@@ -67,6 +69,39 @@ public class Ball extends Actor
             ballPace();
         }
     }
+    /**
+     * Creates and plays the sound pew, sets a volume and plays the file.
+     */
+    public void Pew()
+    {
+        
+        pew = new GreenfootSound("pew.wav");
+        pew.setVolume(40);
+        pew.play();
+        
+    }
+    
+    /**
+     * Creates the sound file thump, sets a volume and plays the file.
+     */
+    public void Thump()
+    {
+        thump = new GreenfootSound("thump.wav");
+        thump.setVolume(55);
+        thump.play();
+        
+
+    }
+    
+    /**
+     * Creates the sound booo, sets a volume and plays the file.
+     */
+    public void GameOver()
+    {
+        booo = new GreenfootSound("booo.wav");
+        booo.setVolume(30);
+        booo.play();
+    }
     
     /**
      * Returns true if the ball is touching one of the side walls.
@@ -105,15 +140,15 @@ public class Ball extends Actor
             if (! hasBouncedHorizontally)
             {
                 revertHorizontally();
+                Thump();
             }
-            Greenfoot.playSound("thump.wav");
+            
         }
          else if(isTouchingCeiling())
         {
                   System.out.println("isTouchingCeiling()");
-                  Greenfoot.playSound("thump.wav");
-            
                   revertVertically();
+                  Thump();
         }
         else
         {
@@ -169,7 +204,7 @@ public class Ball extends Actor
         {
             revertVertically();
             hit = hit + 1;
-            Greenfoot.playSound("pew.wav");
+            Pew();
 
         }
         Actor Computer = getOneIntersectingObject(Computer.class);
@@ -180,16 +215,17 @@ public class Ball extends Actor
             if(!hasBouncedVertically){
                 System.out.println("computer   " + Computer.getY());
                 System.out.println("ball    " + getY());
-                
+                Pew();
+
             }
             else{
                revertVertically();
                System.out.println("bounce");
+               hit = hit + 1;
             }
 
             //revertVertically();
-            hit = hit + 1;
-            Greenfoot.playSound("pew.wav");
+            
 
         }
     }

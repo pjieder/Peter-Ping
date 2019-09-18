@@ -17,6 +17,7 @@ public class Ball extends Actor
 
     private int hit = 1;
     private int speed = 2;
+    private int health = 3;
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;

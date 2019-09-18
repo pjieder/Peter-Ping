@@ -11,7 +11,7 @@ public class PingWorld extends World
 {
     private static final int WORLD_WIDTH = 500;
     private static final int WORLD_HEIGHT = 700;
-    public static int paddle;
+    public static int computerCounter;
     
     private Counter scoreCounter;
 
@@ -40,7 +40,7 @@ public class PingWorld extends World
             Paddle player = new Paddle(144,46);
             addObject(player, 300, 650);
             addObject(new Computer(144,46),60, Greenfoot.getRandomNumber((WORLD_HEIGHT/4))+50);
-            paddle++;
+            computerCounter++;
             
              
            
@@ -52,10 +52,10 @@ public class PingWorld extends World
     }
     public void act()
     {
-        if (paddle < 1)
+        if (computerCounter < 1)
         {
             addObject(new Computer(100,20),60, Greenfoot.getRandomNumber((WORLD_HEIGHT/4))+50);
-            paddle++;
+            computerCounter++;
         }
     }
     public Counter getCounter(){

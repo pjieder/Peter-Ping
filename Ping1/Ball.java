@@ -15,9 +15,8 @@ public class Ball extends Actor
     private static final int STARTING_ANGLE_WIDTH = 90;
     private static final int DELAY_TIME = 100;
 
-    private int hit = 1;
+    private int hit = 0;
     private int speed = 2;
-    private int health = 3;
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;

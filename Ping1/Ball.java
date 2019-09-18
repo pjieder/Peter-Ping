@@ -20,7 +20,7 @@ public class Ball extends Actor
     private boolean hasBouncedHorizontally;
     private boolean hasBouncedVertically;
     private int delay;
-    private GreenfootImage ball;
+    
     
    
     
@@ -39,13 +39,14 @@ public class Ball extends Actor
      */
     private void createImage()
     {
-        ball = new GreenfootImage ("ball.png");
-        
+       
+        setImage(new GreenfootImage ("ball.png"));
+    }    
         /*GreenfootImage ballImage = new GreenfootImage(BALL_SIZE,BALL_SIZE);
         ballImage.setColor(Color.BLACK);
         ballImage.fillOval(0, 0, BALL_SIZE, BALL_SIZE);
         setImage(ballImage);*/
-    }
+    
    
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever

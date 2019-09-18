@@ -186,10 +186,10 @@ public class Ball extends Actor
             else{
                revertVertically();
                System.out.println("bounce");
+               hit = hit + 1;
             }
 
             //revertVertically();
-            hit = hit + 1;
             Greenfoot.playSound("pew.wav");
 
         }

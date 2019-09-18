@@ -32,14 +32,14 @@ public class Computer extends Actor
     public void act() 
     {
         setLocation(getX() + dx, getY());
-        tryChangeDirection();
+        removeComputer();
         
     }    
 
     /**
      * Will rotate the paddle 180 degrees if the paddle is at worlds edge.
      */
-    private void tryChangeDirection()
+    private void removeComputer()
     {
         //Check to see if we are touching the outer boundaries of the world:
         // IF we are touching the right boundary OR we are touching the left boundary:

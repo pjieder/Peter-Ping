@@ -94,16 +94,6 @@ public class Ball extends Actor
     }
     
     /**
-     * Creates the sound booo, sets a volume and plays the file.
-     */
-    public void GameOver()
-    {
-        booo = new GreenfootSound("booo.wav");
-        booo.setVolume(30);
-        booo.play();
-    }
-    
-    /**
      * Returns true if the ball is touching one of the side walls.
      */
     private boolean isTouchingSides()

@@ -70,7 +70,7 @@ public class Ball extends Actor
         }
     }
     /**
-     * Creates and plays the sound pew, sets a volume and plays the file.
+     * Creates the reference to the sound pew, sets a volume and plays the file.
      */
     public void Pew()
     {
@@ -82,7 +82,7 @@ public class Ball extends Actor
     }
     
     /**
-     * Creates the sound file thump, sets a volume and plays the file.
+     * Creates the reference to the sound file thump, sets a volume and plays the file.
      */
     public void Thump()
     {

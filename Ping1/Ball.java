@@ -136,7 +136,7 @@ public class Ball extends Actor
         }
          else if(isTouchingCeiling())
         {
-                  System.out.println("isTouchingCeiling()");
+                  //System.out.println("isTouchingCeiling()");
                   revertVertically();
                   Thump();
         }
@@ -210,7 +210,7 @@ public class Ball extends Actor
             }
             else{
                revertVertically();
-               System.out.println("bounce");
+               //System.out.println("bounce");
                hit = hit + 1;
             }
 

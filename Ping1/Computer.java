@@ -47,7 +47,7 @@ public class Computer extends Actor
         {
             //Change our 'x' direction to the inverted direction:
             //dx = dx * -1;
-            PingWorld.paddle = 0;
+            PingWorld.computerCounter = 0;
             getWorld().removeObject(this);
         }
     }

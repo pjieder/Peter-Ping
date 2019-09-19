@@ -213,8 +213,8 @@ public class Ball extends Actor
 
             
             if(!hasBouncedVertically){
-                System.out.println("computer   " + Computer.getY());
-                System.out.println("ball    " + getY());
+                //System.out.println("computer   " + Computer.getY());
+                //System.out.println("ball    " + getY());
                 Pew();
 
             }
